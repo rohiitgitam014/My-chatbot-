@@ -36,7 +36,7 @@ if api_key:
             except Exception as e:
                 reply = f"Error: {e}"
 
-        st.session_state.chat_history.append((reply))
+     st.session_state.chat_history.append(("Gemini", reply))
 
     # ---------- Chat History Display ----------
     st.markdown("---")
