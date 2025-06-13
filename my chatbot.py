@@ -11,7 +11,7 @@ api_key = "AIzaSyA84cMkSiy9i7Ph7UJmjJSrGcpd99dAQYc"
 
 if api_key:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('models/gemini-pro')  # ✅ Correct model name
+    model = genai.GenerativeModel('gemini-2.0-flash')  # ✅ Correct model name
 
     st.title("🤖 My Chatbot")
 
