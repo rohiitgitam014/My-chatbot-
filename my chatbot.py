@@ -7,7 +7,7 @@ st.set_page_config(page_title="Gemini Chatbot", layout="centered")
 GEMINI_IMAGE_PATH = "gemini_avatar.png"  # Use your uploaded image here
 
 # ---------- API Key Input ----------
-api_key = "your_gemini_api_key_here"
+api_key = "AIzaSyA84cMkSiy9i7Ph7UJmjJSrGcpd99dAQYc"
 
 
 if api_key:
