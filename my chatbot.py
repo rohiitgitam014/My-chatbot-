@@ -29,7 +29,7 @@ if api_key:
         st.markdown(f"**🧑‍💼 You:** {user_input}")
 
         # Show Gemini spinner and process reply
-        with st.spinner("🤖 Beautiful is thinking..."):
+        with st.spinner(" Beautiful is thinking..."):
             try:
                 response = model.generate_content(user_input)
                 reply = response.text
