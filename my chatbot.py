@@ -6,13 +6,12 @@ import google.generativeai as genai
 st.set_page_config(page_title="Gemini Chatbot", layout="centered")
 GEMINI_IMAGE_PATH = "gemini_avatar.png"  # Use your uploaded image here
 
-# ---------- API Key Input ----------
+# ---------- API Key ----------
 api_key = "AIzaSyA84cMkSiy9i7Ph7UJmjJSrGcpd99dAQYc"
-
 
 if api_key:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-2.0-flash')
+    model = genai.GenerativeModel('models/gemini-pro')  # ✅ Correct model name
 
     st.title("🤖 My Chatbot")
 
@@ -29,14 +28,15 @@ if api_key:
         st.markdown(f"**🧑‍💼 You:** {user_input}")
 
         # Show Gemini spinner and process reply
-        with st.spinner(" Beautiful girl  is thinking..."):
+        with st.spinner("💁‍♀️ Beautiful girl is thinking..."):
             try:
                 response = model.generate_content(user_input)
                 reply = response.text
             except Exception as e:
                 reply = f"Error: {e}"
 
-     st.session_state.chat_history.append(("Gemini", reply))
+        # Append Gemini's response after spinner
+        st.session_state.chat_history.append(("Gemini", reply))
 
     # ---------- Chat History Display ----------
     st.markdown("---")
@@ -48,4 +48,4 @@ if api_key:
             with col1:
                 st.image(Image.open(GEMINI_IMAGE_PATH), width=60)
             with col2:
-                 st.markdown(f"**🤖 {speaker}:** {message}")
+                st.markdown(f"**🤖 {speaker}:** {message}")
