@@ -48,4 +48,4 @@ if api_key:
             with col1:
                 st.image(Image.open(GEMINI_IMAGE_PATH), width=60)
             with col2:
-                st.markdown(f"**🤖 {speaker}:** {message}")
+                st.markdown(f"**💁‍♀️ {speaker}:** {message}")
